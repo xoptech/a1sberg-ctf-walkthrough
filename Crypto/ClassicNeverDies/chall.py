@@ -1,8 +1,6 @@
 import base64
 
-FLAG = b"A1S{REDACTED}"
-
-shift = ???
+FLAG = b"P1H{r43h4g_4cs_q345i64}"
 
 def caesar(data, s):
     res = ""
@@ -15,7 +13,7 @@ def caesar(data, s):
             res += c
     return res.encode()
 
-enc = caesar(FLAG, shift)
-enc = base64.b64encode(enc)
-
-print(enc.decode())
+for shift in range(26):
+    enc = caesar(FLAG, shift)
+    enc = base64.b64encode(enc)
+    print(base64.b64decode(enc.decode()))
