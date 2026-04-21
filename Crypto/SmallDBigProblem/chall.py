@@ -1,21 +1,12 @@
 from Crypto.Util.number import *
-import random
 
-FLAG = b"REDACTED"
+n = 4042385576179790021385392734136623479917483928872149247191354705588845852190816773905159946863952080468865646069169426796033128730981148152529035624359941
+c = 3536864992404931791903655608377934179833810955985392822518579076832238426397768364317621411259418713760467343328935135678552468491095409030955385558691341
 
-p = getPrime(256)
-q = getPrime(256)
-
-n = p * q
-phi = (p-1)*(q-1)
-
-d = random.randint(1, 2**16)
-e = inverse(d, phi)
-
-m = bytes_to_long(FLAG)
-
-c = pow(m, e, n)
-
-print("n =", n)
-print("e =", e)
-print("c =", c)
+for d in range(1, 2**16):
+    m = pow(c, d, n)
+    msg = long_to_bytes(m)
+    
+    if b'A1S{' in msg:
+        print(msg)
+        break
