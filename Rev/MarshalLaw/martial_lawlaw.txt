@@ -1,0 +1,64 @@
+  0           RESUME                   0
+
+  2           LOAD_CONST               0 (<code object reveal_flag at 0x79ee6deb12f0, file "martial_law.py", line 2>)
+              MAKE_FUNCTION
+              STORE_NAME               0 (reveal_flag)
+
+ 10           LOAD_CONST               1 (<code object main at 0x79ee6de8e100, file "martial_law.py", line 10>)
+              MAKE_FUNCTION
+              STORE_NAME               1 (main)
+              RETURN_CONST             2 (None)
+
+Disassembly of <code object reveal_flag at 0x79ee6deb12f0, file "martial_law.py", line 2>:
+  2           RESUME                   0
+
+  3           BUILD_LIST               0
+              LOAD_CONST               1 ((4, 103, 48, 23, 20, 62, 101, 21, 69, 10, 167, 139, 141, 198, 136, 215, 249, 149, 199, 198, 22, 61, 87, 31, 0))
+              LIST_EXTEND              1
+              STORE_FAST               0 (data)
+
+  4           LOAD_CONST               2 ('')
+              STORE_FAST               1 (flag)
+
+  5           LOAD_GLOBAL              1 (enumerate + NULL)
+              LOAD_FAST                0 (data)
+              CALL                     1
+              GET_ITER
+      L1:     FOR_ITER                35 (to L2)
+              UNPACK_SEQUENCE          2
+              STORE_FAST_STORE_FAST   35 (i, b)
+
+  6           LOAD_FAST                2 (i)
+              LOAD_CONST               3 (13)
+              BINARY_OP                5 (*)
+              LOAD_CONST               4 (7)
+              BINARY_OP                0 (+)
+              LOAD_CONST               5 (66)
+              BINARY_OP               12 (^)
+              LOAD_CONST               6 (255)
+              BINARY_OP                1 (&)
+              STORE_FAST               4 (key)
+
+  7           LOAD_FAST                1 (flag)
+              LOAD_GLOBAL              3 (chr + NULL)
+              LOAD_FAST_LOAD_FAST     52 (b, key)
+              BINARY_OP               12 (^)
+              CALL                     1
+              BINARY_OP               13 (+=)
+              STORE_FAST               1 (flag)
+              JUMP_BACKWARD           37 (to L1)
+
+  5   L2:     END_FOR
+              POP_TOP
+
+  8           LOAD_FAST                1 (flag)
+              RETURN_VALUE
+
+Disassembly of <code object main at 0x79ee6de8e100, file "martial_law.py", line 10>:
+ 10           RESUME                   0
+
+ 11           LOAD_GLOBAL              1 (print + NULL)
+              LOAD_CONST               1 ('Nothing to see here...')
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)

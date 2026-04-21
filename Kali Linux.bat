@@ -1,1 +1,1 @@
-wsl.exe -d kali-linux
+wsl -d kali-linux -u root
