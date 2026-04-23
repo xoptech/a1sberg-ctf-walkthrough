@@ -6,6 +6,24 @@ answering challenges in the practice website provided for the upcoming kyokugen 
 ## guide idk [WIP]
 <details>
 <summary>
+Crypto
+</summary>
+
+useful links for ciphers:
+- cipher identifier - [https://www.dcode.fr/cipher-identifier](https://www.dcode.fr/cipher-identifier)
+- most ciphers - [https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)
+- MD5, specifically - [https://crackstation.net/](https://crackstation.net/)
+
+<details>
+    <summary>
+    soon.
+    </summary>
+</details>
+
+</details>
+
+<details>
+<summary>
 Web
 </summary>
 
