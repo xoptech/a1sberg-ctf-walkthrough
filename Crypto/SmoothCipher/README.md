@@ -1,1 +1,2 @@
-1. 
+(i tried running a python code locally my laptop overheated calculating ;-;)
+1. anyway use https://sagecell.sagemath.org/ to decode the thing as it has useful methods for python that simplify the code. 

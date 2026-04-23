@@ -1,0 +1,40 @@
+# at some point we use "CHINESE" remainder theorem idk
+# tbh its hard not to AI this because this challenge is made from AI and the formulas are very brutal
+# AI-generated crypto challenges can definitely be brutal to look at—they often stitch together intense math concepts.
+# - said by AI, idk.
+
+
+# THIS SECTION CAN NOT BE RUN LOCALLY. USE https://sagecell.sagemath.org/
+
+import re
+
+n = 0x6769848e8100964d0eba4b3385b2c0f91693d32986a04f323c40e5498e95ba57037955b4f16beaa7f29dd80cbeffed301a4004d0e3679081b69dae788011e8a0ea3e25ea4b378bcf7f54872c9c7fcd172cbbddea15342e94aee6c6b28344a32641074225211fed123f6fa1e8209cb3fbae675294f0d939791087dd406a873bd03f975c9fb1177b109cbc194d3766bf129174b10f80a65173de79945e8209fefbc48e9a8504640d3aeb872879dac4a1cf5221bda31be7024b70563491486844122376bff320c3c7342f836f31387699e216d40cddcdc360ef8b4736a83cdc50780bde59f763a2499aa04995601e18b0cfa549b99db7bffccd1fa424bdd9d65f21
+c = 0x2260def51f5055e1b489ff3c48bc59a69c3db0da9364f713f71748542d614697ab2556dddfde8cfec8c268a89ccc5bce09ea7101673fcd9cad173501260d13c217d5a41824bcb2a65e1e84467b0882b607d637f206e301077e394c2868faf019a93fd04cd9a3cb09a20400a60517cb724f9d27f5f874106607bda3d7c8687cd860fe19892426cbc648c03d2b4858d40a8239873620a5f7e608a8cb74ff1c6748c72d484fe37c4b99e7190e022ad974bd0e19a084ef8577d302c1f54c2c308bb5523958255a79918eae3de85fd3d991a3fdbd94a6498a4db52e3c77e6b1ef55ddfcaed7094ec506bffa6eb8c92fb5f8e621bc6b96f4e015843909c01b8787d09c
+
+
+print("[+] Factoring n using Pollard's p-1...")
+a, p = 2, 1
+for j in range(2, 200000):
+    a = power_mod(a, j, n)
+    d = gcd(a - 1, n)
+    if 1 < d < n:
+        p = d
+        break
+
+q = n // p
+print("[+] Success! Found p and q")
+
+print("[+] Solving Discrete Log (Sage handles this instantly)...")
+# Sage automatically detects the smooth order and applies Pohlig-Hellman
+xp = discrete_log(Mod(c, p), Mod(3, p))
+xq = discrete_log(Mod(c, q), Mod(3, q))
+
+print("[+] Combining with CRT...")
+secret_int = crt([Integer(xp), Integer(xq)], [p - 1, q - 1])
+
+print("[+] Decoding flag...")
+hex_str = hex(secret_int)[2:]
+if len(hex_str) % 2 != 0:
+    hex_str = '0' + hex_str
+    
+print("\nFLAG:", bytes.fromhex(hex_str).decode('utf-8', 'ignore'))
