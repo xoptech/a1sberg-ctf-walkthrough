@@ -64,8 +64,6 @@ def main():
     print(encrypted_flag)
     print(f"Encrypted Flag: {hex_encrypted_flag}")
 
-    if(True): return
-
     while True:
         print("\nSend me a hex-encoded ciphertext to verify:")
         user_input = input("> ").strip()
