@@ -11,6 +11,6 @@ build/
 venv/
 ENV/
 env/
-**/solve.py
+**/solution.py
 **/flag
 **/flag.txt
