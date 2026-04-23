@@ -6,6 +6,26 @@ answering challenges in the practice website provided for the upcoming kyokugen 
 ## guide idk [WIP]
 <details>
 <summary>
+Forensics
+</summary>
+
+* **`dd files`:**
+    ```bash
+    fdisk -l FILENAME.dd
+    ```
+
+
+<details>
+    <summary>
+    soon.
+    </summary>
+</details>
+
+</details>
+
+
+<details>
+<summary>
 Crypto
 </summary>
 
