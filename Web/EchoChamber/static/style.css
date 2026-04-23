@@ -1,0 +1,99 @@
+:root {
+    --neon-green: #00ff41;
+    --dark-bg: #050505;
+    --dim-green: #003b00;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-green);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* CRT Scanline Effect */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.container {
+    border: 1px solid var(--neon-green);
+    padding: 40px;
+    background: rgba(0, 20, 0, 0.9);
+    box-shadow: 0 0 15px var(--dim-green);
+    position: relative;
+    z-index: 5;
+    width: 600px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--neon-green);
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.prompt {
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+    color: var(--neon-green);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.glitch-btn {
+    background: var(--neon-green);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.glitch-btn:hover {
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.output-box {
+    margin: 30px 0;
+    padding: 15px;
+    border-left: 3px solid var(--neon-green);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+.back-link {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
