@@ -1,3 +1,5 @@
+// dont paste this on browser console unless u want to wait 2 years for it to run hahaha
+
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function delayedLoop() {
@@ -7,7 +9,7 @@ async function delayedLoop() {
         document.getElementById("login-password").value = s;
         const loginForm = document.getElementById('loginForm');
         loginForm.dispatchEvent(new Event('submit'));
-        await sleep(800);
+        await sleep(600);
     }
 }
 
